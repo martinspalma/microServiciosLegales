@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Laboral | Estudio Lucione</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="brand">
+                <i class="fas fa-balance-scale"></i>
+                <span>Simulador Laboral</span>
+            </div>
+            <button class="hamburger" id="btn-hamburguesa">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-links" id="menu-links">
+                <a href="../index.html" class="nav-item"><i class="fas fa-home"></i> Panel General</a>
+                <a href="index.html" class="nav-item"><i class="fas fa-redo"></i> Nueva Liquidación</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="app-container">
+        <section class="wizard-section">
+            <div id="question-card" class="card">
+                <h2 id="question-text">Cargando simulador...</h2>
+                <div id="options-container" class="options"></div>
+                <div id="options-date" style="display:none;">
+                    <input type="date" id="input-date" class="input-dark" style="height: 60px; width: 80%;">
+                    <button class="btn-opt" id="btn-confirmar-date">CONFIRMAR</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="visual-section">
+            <div id="summary-laboral">
+                <p>Indemnización Estimada:</p>
+                <h2 style="color: var(--accent); font-size: 2.5rem;">$ <span id="total-estimado">0.00</span></h2>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

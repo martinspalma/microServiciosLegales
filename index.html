@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal de Servicios Legales | Estudio Lucione</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="brand"><i class="fas fa-balance-scale"></i> <span>Estudio Lucione & Asoc.</span></div>
+        </div>
+    </header>
+
+    <main class="app-container" style="display: flex; gap: 20px; justify-content: center; align-items: center; min-height: 80vh;">
+        <div class="card selector-card" onclick="location.href='sucesiones/index.html'">
+            <i class="fas fa-users-items" style="font-size: 3rem; color: var(--accent);"></i>
+            <h2>Simulador Sucesiones</h2>
+            <p>Cálculo de legítima, herederos y mejoras Art. 2448.</p>
+            <button class="btn-opt">INICIAR</button>
+        </div>
+
+        <div class="card selector-card" onclick="location.href='indemnizaciones/index.html'">
+            <i class="fas fa-hand-holding-usd" style="font-size: 3rem; color: var(--accent);"></i>
+            <h2>Calculadora Laboral</h2>
+            <p>Indemnización por despido incausado (Art. 245 LCT).</p>
+            <button class="btn-opt">INICIAR</button>
+        </div>
+    </main>
+</body>
+</html>
