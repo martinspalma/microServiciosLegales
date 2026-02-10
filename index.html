@@ -2,35 +2,70 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    
-    <title>Portal de Servicios Legales | Estudio Lucione</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Servicios Legales</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.1.0/index.js"></script>
-    <link rel="stylesheet" href="../style.css">
-    <script src="script.js" defer></script>
+<style>
+        body {
+            padding-top: 0 !important;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .selector-card {
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 400px;
+            text-decoration: none; /* Por si lo rodeas con un <a> */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 320px;
+        }
+        .selector-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--accent);
+        }
+        .selector-card i {
+            margin-bottom: 15px;
+        }
+        .selector-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
     <header class="navbar">
         <div class="navbar-content">
-            <div class="brand"><i class="fas fa-balance-scale"></i> <span>Estudio Lucione & Asoc.</span></div>
+            <div class="brand">
+                <i class="fas fa-balance-scale"></i> 
+                <span>Portal de Servicios Legales</span>
+            </div>
         </div>
     </header>
 
-    <main class="app-container" style="display: flex; gap: 20px; justify-content: center; align-items: center; min-height: 80vh;">
+    <main class="app-container" style="display: flex; gap: 40px; justify-content: center; align-items: center; flex-wrap: wrap; flex: 1; padding: 20px;">
+        
         <div class="card selector-card" onclick="location.href='sucesiones/index.html'">
-            <i class="fas fa-users-items" style="font-size: 3rem; color: var(--accent);"></i>
+            <i class="fas fa-users" style="font-size: 3.5rem; color: var(--accent);"></i>
             <h2>Simulador Sucesiones</h2>
             <p>Cálculo de legítima, herederos y mejoras Art. 2448.</p>
             <button class="btn-opt">INICIAR</button>
         </div>
 
         <div class="card selector-card" onclick="location.href='indemnizaciones/index.html'">
-            <i class="fas fa-hand-holding-usd" style="font-size: 3rem; color: var(--accent);"></i>
+            <i class="fas fa-hand-holding-usd" style="font-size: 3.5rem; color: var(--accent);"></i>
             <h2>Calculadora Laboral</h2>
             <p>Indemnización por despido incausado (Art. 245 LCT).</p>
             <button class="btn-opt">INICIAR</button>
         </div>
+
     </main>
 </body>
 </html>
