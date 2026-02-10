@@ -564,3 +564,131 @@ span {
     background: var(--accent);
     color: black;
 }
+
+/* Estilos específicos para Indemnizaciones - No afectan a Sucesiones */
+#seccion-indemnizaciones .question-card {
+    width: 100%; 
+    max-width: 800px; 
+    margin: 20px auto;
+    padding: 40px; 
+    min-height: 400px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#seccion-indemnizaciones .container-main {
+    display: block; 
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Ocultamos el panel lateral de "Indemnización Estimada" solo en esta sección */
+#seccion-indemnizaciones .sidebar-estimado, 
+#seccion-indemnizaciones #contenedor-total-lateral {
+    display: none !important;
+}
+#seccion-indemnizaciones .date-row-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#seccion-indemnizaciones .stepper-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 300px;
+    background: #222;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#seccion-indemnizaciones .btn-step {
+    background: var(--accent);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#seccion-indemnizaciones .value-display {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    min-width: 100px;
+    text-align: center;
+}
+
+#seccion-indemnizaciones .stepper-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 320px;
+    background: #252525; /* Color exacto de los inputs de sucesiones */
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 8px;
+}
+
+#seccion-indemnizaciones .btn-step {
+    background: #333;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; /* Redondos como en sucesiones */
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+#seccion-indemnizaciones .btn-step:hover {
+    background: var(--accent);
+    color: #000;
+}
+
+#seccion-indemnizaciones .value-display {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--text-light);
+    min-width: 80px;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+/* Reducimos el margen superior del contenedor para que suba la tarjeta */
+#seccion-indemnizaciones .app-container {
+    margin-top: 20px !important; /* Menos espacio respecto al navbar */
+    padding-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea al inicio, no al centro */
+    min-height: auto;
+}
+
+/* Ajustamos la tarjeta de preguntas */
+#seccion-indemnizaciones .question-card {
+    margin-top: 10px !important; /* Casi pegado al header */
+    padding: 20px 30px; /* Reducimos padding interno para ganar espacio vertical */
+    min-height: 300px; /* Un poco más compacta */
+}
+
+/* Ajuste específico para mobile */
+@media (max-width: 768px) {
+    body {
+        padding-top: 10px; /* Menos espacio arriba en el body */
+    }
+    #seccion-indemnizaciones .app-container {
+        margin-top: 10px !important;
+    }
+}

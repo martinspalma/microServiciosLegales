@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,6 +7,29 @@
     <title>Calculadora Laboral | Estudio Lucione</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            padding-top: 10px !important;
+        }
+        /* Ajuste inmediato para elevar la tarjeta cerca del header */
+        #seccion-indemnizaciones .app-container {
+            margin-top: 0 !important;
+            padding-top: 60 !important;
+        }
+        #seccion-indemnizaciones .question-card {
+            margin-top: 5px !important;
+            padding: 20px !important;
+            min-height: auto !important; /* Permite que la tarjeta se adapte al contenido */
+        }
+        /* Ajuste de etiquetas para ahorrar espacio vertical */
+        .date-label {
+            color: var(--accent);
+            font-weight: bold;
+            margin-bottom: 2px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 <body>
     <header class="navbar">
@@ -26,24 +50,59 @@
 
     <main class="app-container">
         <section class="wizard-section">
-            <div id="question-card" class="card">
-                <h2 id="question-text">Cargando simulador...</h2>
-                <div id="options-container" class="options"></div>
-                <div id="options-date" style="display:none;">
-                    <input type="date" id="input-date" class="input-dark" style="height: 60px; width: 80%;">
-                    <button class="btn-opt" id="btn-confirmar-date">CONFIRMAR</button>
-                </div>
-            </div>
-        </section>
+            <div id="seccion-indemnizaciones">
+                <div id="question-card" class="card">
+                    <h2 id="question-text" style="margin-bottom: 1.5rem;">Cargando simulador...</h2>
+                    
+                    <div id="options-container" class="options"></div>
+                    
+                    <div id="options-date" style="display:none; flex-direction: column; align-items: center; gap: 10px; width: 100%;">
+                        
+                        <div class="date-row-mobile">
+                            <label class="date-label">DÍA</label>
+                            <div class="stepper-container">
+                                <button type="button" class="btn-step" onclick="cambiarValor('dia', -1)">-</button>
+                                <span id="display-dia" class="value-display">01</span>
+                                <button type="button" class="btn-step" onclick="cambiarValor('dia', 1)">+</button>
+                            </div>
+                        </div>
 
-        <section class="visual-section">
-            <div id="summary-laboral">
-                <p>Indemnización Estimada:</p>
-                <h2 style="color: var(--accent); font-size: 2.5rem;">$ <span id="total-estimado">0.00</span></h2>
+                        <div class="date-row-mobile">
+                            <label class="date-label">MES</label>
+                            <div class="stepper-container">
+                                <button type="button" class="btn-step" onclick="cambiarValor('mes', -1)">-</button>
+                                <span id="display-mes" class="value-display" data-mes="0" style="min-width: 130px;">Enero</span>
+                                <button type="button" class="btn-step" onclick="cambiarValor('mes', 1)">+</button>
+                            </div>
+                        </div>
+
+                        <div class="date-row-mobile">
+                            <label class="date-label">AÑO</label>
+                            <div class="stepper-container">
+                                <button type="button" class="btn-step" onclick="cambiarValor('anio', -1)">-</button>
+                                <span id="display-anio" class="value-display">2020</span>
+                                <button type="button" class="btn-step" onclick="cambiarValor('anio', 1)">+</button>
+                            </div>
+                        </div>
+
+                        <button class="btn-opt" id="btn-confirmar-date" style="width: 85%; margin-top: 15px;">CONFIRMAR FECHA</button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <script src="script.js"></script>
+    <script>
+        // Lógica de la hamburguesa para que funcione igual que en Sucesiones
+        const btnMenu = document.getElementById('btn-hamburguesa');
+        const menuLinks = document.getElementById('menu-links');
+
+        if(btnMenu) {
+            btnMenu.addEventListener('click', () => {
+                menuLinks.classList.toggle('show');
+            });
+        }
+    </script>
 </body>
 </html>
